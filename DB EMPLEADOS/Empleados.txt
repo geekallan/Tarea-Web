@@ -1,0 +1,13 @@
+CREATE TABLE `empleados` (
+  `id_empleado` int NOT NULL AUTO_INCREMENT,
+  `codigo` varchar(10) NOT NULL,
+  `nombres` varchar(100) NOT NULL,
+  `apellidos` varchar(100) NOT NULL,
+  `direccion` varchar(255) NOT NULL,
+  `telefono` varchar(15) NOT NULL,
+  `fecha_nacimiento` date NOT NULL,
+  `id_puesto` int DEFAULT NULL,
+  PRIMARY KEY (`id_empleado`),
+  KEY `empleados_ibfk_1` (`id_puesto`),
+  CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`id_puesto`) REFERENCES `puestos` (`id_puesto`)
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
